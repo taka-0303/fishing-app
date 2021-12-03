@@ -1,0 +1,31 @@
+<div>
+  <h2>情報を入力</h2>
+  <%= form_with model: [@fish_name, @fish_info], url: fish_name_fish_infos_path(@fish_name.id),local: true do |f| %>
+  
+    <div>
+      <div>
+        <h5>日付</h5>
+        <%= f.date_select :day, class: 'form-control'%>
+      </div>
+      <div>
+        <h5>写真を選択</h5>
+        <%= f.file_field :image %>
+      <div>
+        <h5>つれた数を入力</h5>
+        <%= f.text_field :fish_num, placeholder:"例）10"%>匹
+      </div>
+      <div>
+        <h5>最大サイズを入力</h5>
+        <%= f.text_field :fish_size, placeholder:"例）23"%>cm
+      </div>
+      <div>
+        <h5>MEMO</h5>
+        <%= f.text_area :memo %>
+      </div>
+      <div>
+        <%= f.submit "保存する" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,18 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  display: block;
+}
+
+.herder{
+  background-color: lightskyblue;
+  width: 100vw;
+  height: 130px;
+}
+
+.body{
+  background-color: lightslategray;
+  width: 100vw;
+  height: calc(100vh - 130px);
+}

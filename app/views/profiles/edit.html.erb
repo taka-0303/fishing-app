@@ -1,0 +1,27 @@
+<h2>プロフィール編集</h2>
+
+<%= form_with model: @profile, local: true do |f|%>
+  <div class="field">
+    <%= f.label :image, "プロフィール画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field, "よく行くフィールド" %><br />
+    <%= f.text_field :field, placeholder: "例）東京湾、多摩川"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :career, "釣り歴" %><br />
+    <%= f.text_field :career, placeholder: "年数入力 例）５" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, "自己紹介(100字以内)" %><br />
+    <%= f.text_area :text, class: :form__text, maxlength:"100" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

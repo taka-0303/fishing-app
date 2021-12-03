@@ -1,0 +1,19 @@
+<div class="kinds-new">
+  <%= form_with model: @fish_name, url: fish_names_path, class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :fish_kind, class: 'form-message', placeholder: '魚の名前を登録' %>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+  <% end %>
+</div>
+
+<div class="kinds-info">
+  <div class="fish-name">
+  <% if @fish_names.present? %>
+    <% @fish_names.each do |fish| %>
+      <%= link_to fish.fish_kind, fish_name_path(fish.id) %>
+    <% end %>
+  <% end %>
+    
+  </div>
+</div>
