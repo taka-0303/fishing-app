@@ -18,11 +18,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find_by(params[:user_id])
+    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profile = Profile.find_by(params[:user_id])
+    @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to root_path
     else 

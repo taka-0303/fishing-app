@@ -1,3 +1,103 @@
 // Place all the styles related to the fish_names controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.name-title{
+  padding: 1rem 2rem;
+  border-top: 6px double #000;
+  border-bottom: 6px double #000;
+  display: flex;
+  justify-content: space-between;
+  height: 130px;
+  width: 100vw;
+}
+
+.title{
+  font-size: 45px;
+  margin-top: 10px;
+}
+
+.fish-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fish-info-ta{
+  width: 300px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.fish-info-tr{
+  border-bottom: solid 2px white;
+}
+
+.fish-info-tr:last-child{
+  border-bottom: none;
+}
+
+.fish-info-th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.fish-info-th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.fish-info-td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+}
+
+.back-button{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.back-button a{
+  color: rgb(224, 60, 60);
+  text-decoration:none; 
+}
+
+//kind css
+.kinds-new{
+  display: flex;
+  padding: 20px 40px;
+}
+
+.form-name{
+  height: 50px;
+  width: 200px;
+  padding-left: 10px;
+}
+.fish-infos{
+  display: flex;
+  flex-wrap: wrap;
+}
+.fish-name{
+  padding: 20px;
+}
+.name-font{
+  font-size: 30px;
+  text-decoration:none; 
+  padding: 20px;
+  border: solid black;
+}

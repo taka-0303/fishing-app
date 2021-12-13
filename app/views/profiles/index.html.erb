@@ -1,13 +1,17 @@
 
 <div class="wrapper">
   <div class="herder">
-    <h1>釣りすぎ君</h1>
+    <div class="title">
+    <h1>釣りすぎ君。</h1>
+    </div>
+    <div class="out">
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+    </div>
+  </div>
+  <div class="profile-position">
+    <%= render "profile_position" %>
   </div>
   <div class="body">
-    <div class="profile-position">
-      <%= render "profile_position" %>
-    </div>
     <div class="kinds-position">
       <%= render "fish_names/kinds_position" %>
     </div>

@@ -9,10 +9,105 @@
   background-color: lightskyblue;
   width: 100vw;
   height: 130px;
+  display: flex;
+  justify-content: space-between;
+  border: solid ;
+}
+
+.profile-position{
+  width: 100vw;
+  height: 160px;
+  display: flex;
+  justify-content: center;
 }
 
 .body{
-  background-color: lightslategray;
+  display: flex;
   width: 100vw;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 130px - 160px);
 }
+
+.title h1{
+  font-size: 40px;
+  padding: 0 20px;
+}
+
+.out{
+  font-size: 20px;
+  padding: 70px 60px 0 0;
+}
+
+.kinds-position{
+  width: calc(100vw - 400px);
+}
+
+//profile css
+.profile-image{
+  padding: 10px 20px;
+}
+
+.image{
+  display: block;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+}
+
+.profile-edit{
+  display: block;
+  text-decoration:none;
+}
+
+.nickname{
+  font-size: 40px;
+  padding-top: 40px;
+}
+
+.info{
+  padding: 10px 20px;
+}
+
+.profile-table{
+  width: 500px;
+  border-collapse: collapse;
+}
+
+.profile-tr{
+  border-bottom: solid 2px white;
+}
+
+.profile-tr:last-child{
+  border-bottom: none;
+}
+
+.profile-th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.profile-th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.profile-td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+}
+///profile css

@@ -1,32 +1,32 @@
 <div class="profile-image">
-  <h2>
+  <% if @profile.image.present? %>
+    <%= image_tag @profile.image,class:"image" %>
+    <%= link_to "プロフィール編集", edit_profile_path(@profile.id), method: :get, class: "profile-edit" %>
+  <% else %>
+    <%= image_tag "no_image.png",class:"image" %>
+    <%= link_to "プロフィール編集", edit_profile_path(@profile.id), method: :get, class: "profile-edit" %>
+  <% end %>
+</div>
+
+<div class="nickname">
   <%= @profile.user.nickname %>
-  </h2>
-  <div class="main-image">
-    <% if @profile.image.present? %>
-    <%= image_tag @profile.image, size: '100x100' %>
-    <% else %>
-    <%= image_tag "no_image.png", size: '100x100' %>
-    <% end %>
-  </div>
-  <div class="profile-edit">
-    <%= link_to "プロフィール編集", edit_profile_path(@profile.id), method: :get %>
-  </div>
 </div>
-<div class="profile-info">
-  <div class="info-show">
-    <div>
-      <span>釣り歴</span>
-      <%= @profile.career %>年
-    </div>
-    <div>
-      <span>フィールド</span>
-      <%= @profile.field %>
-    </div>
-    <div>
-      <span>自己紹介</span>
-      <%= @profile.text %>
-    </div>
-    
-  </div>
+
+<div class="info">
+  <table class="profile-table">
+    <tr class="profile-tr">
+      <th class="profile-th">釣り歴</th>
+      <td class="profile-td"><%= @profile.career %>年</td>
+    </tr>
+    <tr class="profile-tr">
+      <th class="profile-th">主な釣り場</th>
+      <td class="profile-td"><%= @profile.field %></td>
+    </tr>
+    <tr class="profile-tr">
+      <th class="profile-th">自己紹介</th>
+      <td class="profile-td"><%= @profile.text %></td>
+    </tr>
+  </table>
 </div>
+
+

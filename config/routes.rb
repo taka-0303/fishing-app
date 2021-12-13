@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     }
     
   resources :profiles, only: [:new, :create, :edit, :update]
-  resources :fish_names, only: [:create, :show] do
+  resources :fish_names, only: [:create, :show, :edit, :update, :destroy] do
     resources :fish_infos, only: [:new, :create, :edit, :update, :destroy]
   end
 end

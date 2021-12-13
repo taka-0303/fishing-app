@@ -1,15 +1,37 @@
-<div>
-  <h1>
-    <%= @fish_name.fish_kind %>
-  </h1>
+<div class="name-title">
   <div>
-    <%= @total.to_i %>
+    <div class="title">
+      <%= @fish_name.fish_kind %>
+    </div>
+  </div>
+  <ul class="more_list">
+            <% if user_signed_in? && current_user.id == @fish_name.user_id %>
+              <li>
+                <%= link_to '編集', edit_fish_name_path(@fish_name.id), method: :get %>
+              </li>
+              <li>
+                <%= link_to '削除', fish_name_path(@fish_name.id), method: :delete %>
+              </li>
+            <% end %>
+          </ul>
+  <div>
+    <table class="fish-info-ta">
+      <tr class="fish-info-tr">
+        <th class="fish-info-th">総数</th>
+        <td class="fish-info-td"><%= @total.to_i %>匹</td>
+      </tr>
+     </table>
   </div>
   <div>
-    <%= @max_size %>
+    <table class="fish-info-ta">
+      <tr class="fish-info-tr">
+        <th class="fish-info-th">最大サイズ</th>
+        <td class="fish-info-td"><%= @max_size %>cm</td>
+      </tr>
+    </table>
   </div>
-  <div>
-    <%= link_to 'ホームに戻る', root_path %>
+  <div class="back-button">
+    <a><%= link_to 'ホームに戻る', root_path %></a>
   </div>
 </div>
 
@@ -19,45 +41,46 @@
 
 <div>
   <h3>釣果情報</h3>
-  <ul>
-    <% @fish_infos.each do | fish | %>
-        <ul class="more_list">
-          <% if user_signed_in? && current_user.id == @fish_name.user_id %>
-            <li>
-              <%= link_to '編集', edit_fish_name_fish_info_path(@fish_name.id, fish), method: :get %>
-            </li>
-            <li>
-              <%= link_to '削除', fish_name_fish_info_path(@fish_name.id, fish), method: :delete %>
-            </li>
-          <% end %>
-        </ul>
-      <table>
-        <tbody>
-          <tr>
-            <th>日付</th>
-            <td> <%= fish.day %></td>
-          </tr>
-          <tr>
-            <th colspan="2">
-              <%= image_tag fish.image, size: '200x200'%>
-            </th>
-          </tr>
-          <tr>
-            <th>最大サイズ</th>
-            <td><%= fish.fish_size %></td>
-          </tr>
-          <tr>
-            <th>釣れた数</th>
-            <td><%= fish.fish_num %></td>
-          </tr>
-          <tr>
-            <th colspan="2">MEMO</th>
-          </tr>
-          <tr>
-            <td colspan="2"><%= fish.memo %></td>
-          </tr>
-        </tbody>
-      </table>
-    <% end %>
-  </ul>
+  
+    <ul class="fish-info">
+      <% @fish_infos.each do | fish | %>
+          <ul class="more_list">
+            <% if user_signed_in? && current_user.id == @fish_name.user_id %>
+              <li>
+                <%= link_to '編集', edit_fish_name_fish_info_path(@fish_name.id, fish), method: :get %>
+              </li>
+              <li>
+                <%= link_to '削除', fish_name_fish_info_path(@fish_name.id, fish), method: :delete %>
+              </li>
+            <% end %>
+          </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>日付</th>
+              <td> <%= fish.day %></td>
+            </tr>
+            <tr>
+              <th colspan="2">
+                <%= image_tag fish.image, size: '200x200'%>
+              </th>
+            </tr>
+            <tr>
+              <th>最大サイズ</th>
+              <td><%= fish.fish_size %></td>
+            </tr>
+            <tr>
+              <th>釣れた数</th>
+              <td><%= fish.fish_num %></td>
+            </tr>
+            <tr>
+              <th colspan="2">MEMO</th>
+            </tr>
+            <tr>
+              <td colspan="2"><%= fish.memo %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </ul>
 </div>

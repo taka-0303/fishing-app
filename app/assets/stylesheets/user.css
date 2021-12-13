@@ -1,0 +1,18 @@
+.contents{
+  width: 300px;
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  text-align: center;
+  border: solid;
+}
+
+.field{
+  padding-bottom: 10px;
+}
+
+.actions{
+  padding-bottom: 10px;
+}
