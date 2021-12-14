@@ -5,15 +5,15 @@
     </div>
   </div>
   <ul class="more_list">
-            <% if user_signed_in? && current_user.id == @fish_name.user_id %>
-              <li>
-                <%= link_to '編集', edit_fish_name_path(@fish_name.id), method: :get %>
-              </li>
-              <li>
-                <%= link_to '削除', fish_name_path(@fish_name.id), method: :delete %>
-              </li>
-            <% end %>
-          </ul>
+    <% if user_signed_in? && current_user.id == @fish_name.user_id %>
+    <li>
+      <%= link_to '編集', edit_fish_name_path(@fish_name.id), method: :get %>
+    </li>
+    <li>
+      <%= link_to '削除', fish_name_path(@fish_name.id), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
   <div>
     <table class="fish-info-ta">
       <tr class="fish-info-tr">

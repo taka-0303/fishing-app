@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:edit, :update]
+
   def index
     @profile = current_user.profile
-    @fish_names = current_user.fish_names.all
+    @fish_names = current_user.fish_names.all.order("fish_kind ASC")
   end
 
   def new
@@ -18,11 +20,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to root_path
     else 
@@ -31,6 +31,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
   def profile_params
     params.require(:profile).permit(:field, :text, :image, :career).merge(user_id: current_user.id)

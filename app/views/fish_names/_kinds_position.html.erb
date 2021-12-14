@@ -1,8 +1,9 @@
   <div>
     <%= form_with model: @fish_name, url: fish_names_path, class: 'form', local: true do |f| %>
+    
     <div class="kinds-new">
       <div class="form-input">
-        <%= f.text_field :fish_kind, class: 'form-name', placeholder: '魚の名前を登録' %>
+        <%= f.text_field :fish_kind, class: 'form-name', placeholder: '魚の名前を登録※カタカナ表記' %>
       </div>
         <%= f.submit '送信', class: 'form-submit' %>
     </div>

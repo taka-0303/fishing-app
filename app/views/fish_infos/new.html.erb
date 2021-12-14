@@ -1,22 +1,22 @@
 <div class="fish-score">
   <h2>情報を入力</h2>
   <%= form_with model: [@fish_name, @fish_info], url: fish_name_fish_infos_path(@fish_name.id),local: true do |f| %>
-  
+
     <div>
       <div>
         <h5>日付</h5>
-        <%= f.date_select :day, class: 'form-control'%>
+        <%= f.date_select :day, use_month_numbers:true %>
       </div>
       <div>
         <h5>写真を選択</h5>
         <%= f.file_field :image %>
       <div>
         <h5>つれた数を入力</h5>
-        <%= f.text_field :fish_num, placeholder:"例）10"%>匹
+        <%= f.text_field :fish_num, placeholder:"例）10※半角数字"%>匹
       </div>
       <div>
         <h5>最大サイズを入力</h5>
-        <%= f.text_field :fish_size, placeholder:"例）23"%>cm
+        <%= f.text_field :fish_size, placeholder:"例）23※半角数字"%>cm
       </div>
       <div>
         <h5>MEMO</h5>
